@@ -5,19 +5,19 @@ import java.net.URI;
 //DTO - data transfer object (pattern)
 //инкапсуляция - ООП (инкапсуляции, полиморфизма и наследование)
 //класс, абстракция (уелостаная сущность), DTO pattern
-public class Channel
+public class Channel extends BaseChannel
 // extends Object
 //            |
 //         BaseChannel
 //            |
 //         Channel...
 {
-    private int count;
+    private int count; // property/field
     private String name;
     private URI link;
 
     public String toString(){
-        return "name: " + name + ", count: " + count
+        return "id:" + id + " name: " + name + ", count: " + count
                 + " link:" + link;
     }
 
