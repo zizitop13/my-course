@@ -1,4 +1,4 @@
-package com.snc.channels.model;
+package com.zizitop.course.model;
 
 public class BaseChannel {
 

@@ -1,6 +1,6 @@
-package com.snc.channels;
+package com.zizitop.course;
 
-import com.snc.channels.model.Channel;
+import com.zizitop.course.model.Channel;
 
 import java.net.URI;
 import java.util.Scanner;
