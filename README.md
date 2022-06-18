@@ -1,2 +1,1 @@
-# Social network counter
-### snc-channels
+# My course
