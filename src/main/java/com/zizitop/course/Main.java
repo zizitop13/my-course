@@ -1,8 +1,9 @@
 package com.zizitop.course;
 
-import com.zizitop.course.model.Channel;
+import com.zizitop.course.model.Entrance;
+import com.zizitop.course.model.House;
 
-import java.net.URI;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -12,13 +13,22 @@ public class Main {
     public static void main(String[] args) throws InterruptedException {
         //объект - экземпляр класса Channel
         //javaCodeChannel ссылка на объект
-        Channel javaCodeChannel = new Channel();
-        javaCodeChannel.setId(1);
-        javaCodeChannel.setCount(100);
-        javaCodeChannel.setName("Java Code");
-        javaCodeChannel
-                .setLink(URI.create("https://youtube.com/java_code"));
-        System.out.println(javaCodeChannel);
+        House house = new House();
+
+        int number = 2;
+        Entrance[] entrances = new Entrance[number];
+        entrances[0] = new Entrance();
+        entrances[1] = new Entrance();
+
+        Entrance[] newEntrances = Arrays.copyOf(entrances, 3);
+        entrances = newEntrances;
+        entrances[2] = new Entrance();
+
+        house.setEntrances(entrances);
+
+
+
+        System.out.println(house);
 
         Scanner scanner = new Scanner(System.in);
 
