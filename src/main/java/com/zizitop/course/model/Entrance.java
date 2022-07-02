@@ -10,7 +10,7 @@ package com.zizitop.course.model;
 public class Entrance {
     public int entranceNumber;
     public int flatsNumber;
-    public boolean intercom;
+    protected boolean intercom;
 
     @Override
     public String toString() {
