@@ -17,7 +17,7 @@
 
 - [ ]
   - [ ] remove, size
-  - [ ] linked list
+  - [ ] linked list - [habr](https://habr.com/ru/post/127864/)
   - [ ] toString
 
 ### Notes
