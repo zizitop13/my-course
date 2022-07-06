@@ -1,5 +1,6 @@
 package com.zizitop.course;
 
+import com.sun.net.httpserver.HttpServer;
 import com.zizitop.course.model.Entrance;
 import com.zizitop.course.model.House;
 import com.zizitop.course.utils.DynamicArray;
@@ -36,7 +37,9 @@ public class Main {
         enteranceList.add(entrance2);
 
         Object object = enteranceList.get(2);
+        Object removed = enteranceList.remove(1);
 
+        System.out.println(removed);
         System.out.println(object);
         System.out.println(enteranceList);
 

@@ -8,8 +8,8 @@ public class DynamicArray {
     private int headIndex;
 
 
-    public DynamicArray(){     //    0     1
-        array = new Object[2]; // { 1, 2 }
+    public DynamicArray(){     //    0  1  2  3
+        array = new Object[10]; // { 1, 2, null, 4, 5, 6 }
     }
 
     /**
@@ -18,7 +18,7 @@ public class DynamicArray {
      */
     public void add(Object object){
         if (headIndex == array.length){
-            array = Arrays.copyOf(array, headIndex*2);
+            array = Arrays.copyOf(array, headIndex * 3 / 2);
         }
         array[headIndex++] = object;
     }
@@ -33,6 +33,12 @@ public class DynamicArray {
 
     @Override
     public String toString() {
-        return "";
+        String str = "";
+        for (Object obj : array) {
+            if (obj != null) {
+                str += obj.toString() + " , ";
+            }
+        }
+        return str;
     }
 }

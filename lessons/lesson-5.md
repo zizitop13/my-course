@@ -18,5 +18,7 @@
      
 ### Homework
 
+ - Remove ',' after toString in DynamicArray
+
 
 ### Notes
