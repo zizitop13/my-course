@@ -28,7 +28,9 @@ public class DynamicArray {
     }
 
     public Object remove(int idx){
-        return null;
+        Object removed = array[idx];
+        array[idx] = null;
+        return removed;
     }
 
     @Override

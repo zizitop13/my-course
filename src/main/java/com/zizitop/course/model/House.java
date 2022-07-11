@@ -26,7 +26,7 @@ public class House {
     public boolean elevator;
     public boolean garbageChute;
     public boolean serviceFloor;
-    public int entranceNumber;
+    public int entranceQuantity;
     public int flatNumber;
 
     private Entrance[] entrances;
@@ -40,7 +40,7 @@ public class House {
         this.entrances = entrances;
         for (int i = 0; i < entrances.length; i++) {
             if (entrances[i] != null){
-                this.entranceNumber++;
+                this.entranceQuantity++;
             }
         }
     }
@@ -56,7 +56,7 @@ public class House {
                 ", elevator=" + elevator +
                 ", garbageChute=" + garbageChute +
                 ", serviceFloor=" + serviceFloor +
-                ", entranceNumber=" + entranceNumber +
+                ", entranceNumber=" + entranceQuantity +
                 ", flatNumber=" + flatNumber +
                 ", entrance=" + Arrays.toString(entrances) +
                 '}';

@@ -15,6 +15,7 @@ public class DynamicLinkedList {
 
     private Node head;
     private Node tail;
+    int headIndex;
 
     public void add(Object object){
         Node node = new Node(object);
@@ -37,7 +38,7 @@ public class DynamicLinkedList {
     }
 
     public Object get(int idx){
-        return null;
+        return getNode(idx).object;
     }
 
     public Object remove(int idx){
