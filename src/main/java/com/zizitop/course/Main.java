@@ -28,8 +28,8 @@ public class Main {
         entrance2.entranceNumber = 3;
 
 
-        DynamicArray enteranceList = new DynamicArray();
-//        DynamicLinkedList enteranceList = new DynamicLinkedList();
+//        DynamicArray enteranceList = new DynamicArray();
+        DynamicLinkedList enteranceList = new DynamicLinkedList();
 
 
         enteranceList.add(entrance);

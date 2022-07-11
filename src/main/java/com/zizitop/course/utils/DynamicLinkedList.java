@@ -5,7 +5,11 @@ import java.util.Arrays;
 /**
  *
  *  { } - node
- *   {head} <-> {2} <->  {3}  <->  {tail}
+ *
+ *   {tail|head}
+ *   {tail} <-> {head}
+ *   {tail} <-> {2} <->  {3}  <-> {4} <-> {head}
+ *
  */
 public class DynamicLinkedList {
 
@@ -13,7 +17,15 @@ public class DynamicLinkedList {
     private Node tail;
 
     public void add(Object object){
-
+        Node node = new Node(object);
+        if (head == null){
+            this.head = node;
+            this.tail = node;
+        } else {
+            head.next = node;
+            head = node;
+        }
+        headIndex++;
     }
 
     public Object get(int idx){
@@ -28,6 +40,10 @@ public class DynamicLinkedList {
     private class Node {
         Object object; //payload
         Node next;
-        Node previous;
+
+        public Node(Object object) {
+            this.object = object;
+        }
+
     }
 }
