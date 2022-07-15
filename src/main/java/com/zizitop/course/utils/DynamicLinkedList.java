@@ -29,7 +29,7 @@ public class DynamicLinkedList {
         headIndex++;
     }
 
-    public Node getNode(int idx){
+    private Node getNode(int idx){
         Node result = tail;
         for(int i = 1; i <= idx; i++) {
             result = result.next;
