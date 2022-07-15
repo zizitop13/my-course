@@ -2,13 +2,13 @@ package com.zizitop.course.utils;
 
 import java.util.Arrays;
 
-public class DynamicArray {
+public class DynamicArrayList implements MyList {  // отнаследовались, но на собеседовании так не говорить. сказать "реализовали", "имплементировали"
 
     private Object[] array;
     private int headIndex;
 
 
-    public DynamicArray(){     //    0  1  2  3
+    public DynamicArrayList(){     //    0  1  2  3
         array = new Object[10]; // { 1, 2, null, 4, 5, 6 }
     }
 

@@ -1,12 +1,11 @@
 package com.zizitop.course;
 
-import com.sun.net.httpserver.HttpServer;
 import com.zizitop.course.model.Entrance;
 import com.zizitop.course.model.House;
-import com.zizitop.course.utils.DynamicArray;
+import com.zizitop.course.utils.DynamicArrayList;
 import com.zizitop.course.utils.DynamicLinkedList;
+import com.zizitop.course.utils.MyList;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {

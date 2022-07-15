@@ -11,7 +11,7 @@ import java.util.Arrays;
  *   {tail} <-> {2} <->  {3}  <-> {4} <-> {head}
  *
  */
-public class DynamicLinkedList {
+public class DynamicLinkedList implements MyList {
 
     private Node head;
     private Node tail;
