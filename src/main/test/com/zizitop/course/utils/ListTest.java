@@ -17,13 +17,33 @@ public class ListTest {
             throw new AssertionError();
         }
     }
-    private static void testRemove(MyList list){
+
+    private static void testRemoveOnlyOne(MyList list){
         // Given
         int idx = 0;
         // When
-        list.remove(int idx);
+        Object removedObj = list.remove(idx);
         // Then
+        assertTrue(removedObj == obj && list.get(idx) == null );
+    }
 
+
+    private static void testRemoveFromFirst(MyList list){
+        //TODO
+    }
+
+    private static void testRemoveFromMiddle(MyList list){
+        //TODO
+    }
+
+    private static void testRemoveFromEnd(MyList list){
+        //TODO
+    }
+
+    private static void assertTrue(boolean condition) {
+        if (!condition) {
+            throw new AssertionError();
+        }
     }
 
 }

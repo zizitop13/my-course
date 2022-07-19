@@ -43,10 +43,11 @@ public class DynamicLinkedList implements MyList {
 
     public Object remove(int idx){
         if(idx == 0){ // for "Tail"
-           getNode(0).next = getNode(0); // or getNode(1)??
-        }
-        if(idx == headIndex){ // for "Head"
-          getNode(idx - 1).next = getNode(headIndex);
+           tail = getNode(1);
+        }else if(idx == headIndex){ // for "Head"
+          head = getNode(idx - 1);
+        }else{
+            getNode(idx - 1).next = getNode(idx + 1);
         }
         Object object = get(idx);
         getNode(idx - 1).next = getNode(idx + 1);
