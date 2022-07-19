@@ -42,10 +42,17 @@ public class DynamicLinkedList implements MyList {
     }
 
     public Object remove(int idx){
-        //Object object = get(idx) - return
-        //getNode(idx - 1).next = getNode(idx + 1)
-        //return object;
-        return null;
+        if(idx == 0){ // for "Tail"
+           getNode(0).next = getNode(0); // or getNode(1)??
+        }
+        if(idx == headIndex){ // for "Head"
+          getNode(idx - 1).next = getNode(headIndex);
+        }
+        Object object = get(idx);
+        getNode(idx - 1).next = getNode(idx + 1);
+        return object;
+
+        // написать тест для всех трех случаев remove
     }
 
 

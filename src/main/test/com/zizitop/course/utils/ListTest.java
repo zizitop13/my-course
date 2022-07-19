@@ -17,4 +17,13 @@ public class ListTest {
             throw new AssertionError();
         }
     }
+    private static void testRemove(MyList list){
+        // Given
+        int idx = 0;
+        // When
+        list.remove(int idx);
+        // Then
+
+    }
+
 }
