@@ -5,6 +5,8 @@ public class ListTest {
     public static void main(String[] args) {
         testAdd(new DynamicArrayList());
         testAdd(new DynamicLinkedList());
+        testRemoveOnlyOne(new DynamicArrayList());
+        testRemoveOnlyOne(new DynamicLinkedList());
     }
 
     private static void testAdd(MyList list){
@@ -13,14 +15,14 @@ public class ListTest {
         //When
         list.add(obj);
         //Then
-        if(list.get(0) != obj){
-            throw new AssertionError();
-        }
+        assertTrue(list.get(0) == obj);
     }
 
     private static void testRemoveOnlyOne(MyList list){
         // Given
         int idx = 0;
+        Object obj = new Object();
+        list.add(obj);
         // When
         Object removedObj = list.remove(idx);
         // Then

@@ -38,10 +38,15 @@ public class DynamicLinkedList implements MyList {
     }
 
     public Object get(int idx){
+        Node node = getNode(idx);
+        if(node == null){
+            return null;
+        }
         return getNode(idx).object;
     }
 
     public Object remove(int idx){
+        Object removed = get(idx);
         if(idx == 0){ // for "Tail"
            tail = getNode(1);
         }else if(idx == headIndex){ // for "Head"
@@ -49,11 +54,7 @@ public class DynamicLinkedList implements MyList {
         }else{
             getNode(idx - 1).next = getNode(idx + 1);
         }
-        Object object = get(idx);
-        getNode(idx - 1).next = getNode(idx + 1);
-        return object;
-
-        // написать тест для всех трех случаев remove
+        return removed;
     }
 
 
