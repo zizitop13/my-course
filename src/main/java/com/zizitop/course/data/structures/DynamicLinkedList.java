@@ -1,6 +1,6 @@
-package com.zizitop.course.utils;
+package com.zizitop.course.data.structures;
 
-import java.util.Arrays;
+import com.zizitop.course.data.MyList;
 
 /**
  *
@@ -11,13 +11,13 @@ import java.util.Arrays;
  *   {tail} <-> {2} <->  {3}  <-> {4} <-> {head}
  *
  */
-public class DynamicLinkedList implements MyList {
+public class DynamicLinkedList<T> implements MyList<T> {
 
     private Node head;
     private Node tail;
     int headIndex;
 
-    public void add(Object object){
+    public void add(T object){
         Node node = new Node(object);
         if (head == null){
             this.head = node;
@@ -37,7 +37,7 @@ public class DynamicLinkedList implements MyList {
         return result;
     }
 
-    public Object get(int idx){
+    public T get(int idx){
         Node node = getNode(idx);
         if(node == null){
             return null;
@@ -45,8 +45,8 @@ public class DynamicLinkedList implements MyList {
         return getNode(idx).object;
     }
 
-    public Object remove(int idx){
-        Object removed = get(idx);
+    public T remove(int idx){
+        T removed = get(idx);
         if(idx == 0){ // for "Tail"
            tail = getNode(1);
         }else if(idx == headIndex){ // for "Head"
@@ -59,10 +59,10 @@ public class DynamicLinkedList implements MyList {
 
 
     private class Node {
-        Object object; //payload
+        T object; //payload
         Node next;
 
-        public Node(Object object) {
+        public Node(T object) {
             this.object = object;
         }
 

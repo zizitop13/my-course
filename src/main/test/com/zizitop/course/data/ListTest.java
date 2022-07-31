@@ -1,4 +1,7 @@
-package com.zizitop.course.utils;
+package com.zizitop.course.data;
+
+import com.zizitop.course.data.structures.DynamicArrayList;
+import com.zizitop.course.data.structures.DynamicLinkedList;
 
 public class ListTest {
 

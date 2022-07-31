@@ -58,7 +58,7 @@ public class House {
                 ", serviceFloor=" + serviceFloor +
                 ", entranceNumber=" + entranceQuantity +
                 ", flatNumber=" + flatNumber +
-                ", entrance=" + Arrays.toString(entrances) +
+                ", entrance=" + entrances +
                 '}';
     }
 }
