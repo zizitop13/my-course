@@ -1,5 +1,6 @@
 package com.zizitop.course;
 
+import com.zizitop.course.data.structures.DynamicArrayList;
 import com.zizitop.course.model.Entrance;
 import com.zizitop.course.model.House;
 import com.zizitop.course.data.structures.DynamicLinkedList;
@@ -30,9 +31,9 @@ public class Main {
         enteranceList.add(entrance2);
 
         Entrance object = enteranceList.get(2);
-        Object removed = enteranceList.remove(1);
+        Entrance removed = enteranceList.remove(1);
 
-        System.out.println(removed);
+        System.out.println(removed.entranceNumber);
         System.out.println(object.entranceNumber);
         System.out.println(enteranceList);
 

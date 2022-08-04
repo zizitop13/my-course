@@ -2,6 +2,8 @@ package com.zizitop.course.data.structures;
 
 import com.zizitop.course.data.MyList;
 
+import java.util.HashMap;
+
 /**
  *
  *  { } - node
