@@ -35,4 +35,18 @@ public class HashTable<K,V> implements MyKeyValue<K,V> {
     public V remove(K key) {
         return null;
     }
+
+    private class Entry {
+        private K key;
+        private V value;
+        private Entry next;
+
+        Entry(K key, V value){
+            this.key = key;
+            this.value = value;
+        }
+        V getValue(){
+            return value;
+        }
+    }
 }

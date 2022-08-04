@@ -24,8 +24,8 @@ public class Main {
         Entrance entrance2 = new Entrance();
         entrance2.entranceNumber = 3;
 
-        MyList<Entrance> enteranceList = new DynamicLinkedList();
-
+        MyList<Entrance> enteranceList = new DynamicArrayList<>();
+        
         enteranceList.add(entrance);
         enteranceList.add(entrance1);
         enteranceList.add(entrance2);

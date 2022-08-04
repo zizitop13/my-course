@@ -10,6 +10,7 @@ public class DynamicArrayList<T> implements MyList<T> {  // отнаследов
     private int headIndex;
 
 
+
     public DynamicArrayList() {     //    0  1  2  3
         array = new Object[10]; // { 1, 2, null, 4, 5, 6 }
     }
@@ -56,5 +57,16 @@ public class DynamicArrayList<T> implements MyList<T> {  // отнаследов
 
         }
         return count;
+    }
+    public int length(){
+        return array.length;
+    }
+
+    public void add(int idx, T entry) {
+        if (headIndex == array.length) {
+            array = Arrays.copyOf(array, headIndex * 3 / 2);
+        }
+        array[idx] = entry;
+        headIndex++;
     }
 }
