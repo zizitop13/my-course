@@ -4,7 +4,6 @@
    - [ ] Java
        - [ ] Interface, client
        - [ ] Unit tests
-       - [ ] Hash map
 
  - [ ] New 
    - [ ] Java
