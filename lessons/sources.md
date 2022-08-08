@@ -1,4 +1,4 @@
 ### Habr
 
 1) [GRASP](https://habr.com/ru/post/92570/)
-2) [DATA-STRUCTURES](https://habr.chttps://habr.com/ru/post/92570om/ru/post/128269/)
+2) [DATA-STRUCTURES](https://habr.com/ru/post/92570om/ru/post/128269/)
