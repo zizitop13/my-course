@@ -13,6 +13,9 @@
      - [ ] Hash map
      
 ### Homework
+    - Exceptions
+    - try-catche
+    - finaly
 
 ### Notes
 
