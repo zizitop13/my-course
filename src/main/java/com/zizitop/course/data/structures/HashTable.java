@@ -1,8 +1,9 @@
 package com.zizitop.course.data.structures;
 
 import com.zizitop.course.data.MyKeyValue;
+import com.zizitop.course.model.Entrance;
 
-public class HashTable<K,V> implements MyKeyValue<K,V> {
+public class HashTable<K, V> implements MyKeyValue<K, V> {
 
     private DynamicArrayList<Entry> dynamicArray;
 
@@ -14,10 +15,13 @@ public class HashTable<K,V> implements MyKeyValue<K,V> {
     public void put(K key, V value) {
         int hash = key.hashCode();
         int idx = hash % dynamicArray.length();
+        if(idx<0){
+            idx = -idx;
+        }
 
         Entry existed = dynamicArray.get(idx); //collision
         Entry newEntry = new Entry(key, value);
-        if(existed!=null){
+        if (existed != null) {
             existed.next = newEntry;
         } else {
             dynamicArray.add(idx, newEntry);
@@ -28,7 +32,22 @@ public class HashTable<K,V> implements MyKeyValue<K,V> {
     public V get(K key) {
         int hash = key.hashCode();
         int idx = hash % dynamicArray.length();
-        return null;
+        if(idx<0) {
+            idx = -idx;
+        }
+
+        Entry entry = dynamicArray.get(idx);
+
+        while(entry != null && !key.equals(entry.key)){
+            entry = entry.next;
+        }
+
+        if (entry == null) {
+            return null;
+        }
+
+        return entry.value;
+
     }
 
     @Override
@@ -41,11 +60,12 @@ public class HashTable<K,V> implements MyKeyValue<K,V> {
         private V value;
         private Entry next;
 
-        Entry(K key, V value){
+        Entry(K key, V value) {
             this.key = key;
             this.value = value;
         }
-        V getValue(){
+
+        V getValue() {
             return value;
         }
     }
