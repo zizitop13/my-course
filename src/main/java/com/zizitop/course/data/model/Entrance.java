@@ -1,4 +1,4 @@
-package com.zizitop.course.model;
+package com.zizitop.course.data.model;
 
 
 import java.util.Objects;

@@ -1,7 +1,6 @@
 package com.zizitop.course.data.structures;
 
 import com.zizitop.course.data.MyKeyValue;
-import com.zizitop.course.model.Entrance;
 
 public class HashTable<K, V> implements MyKeyValue<K, V> {
 

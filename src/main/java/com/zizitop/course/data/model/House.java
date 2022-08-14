@@ -1,7 +1,7 @@
-package com.zizitop.course.model;
+package com.zizitop.course.data.model;
 
 
-import com.zizitop.course.data.structures.DynamicArrayList;
+import com.zizitop.course.data.MyList;
 
 /**
  * Класс дом
@@ -29,10 +29,10 @@ public class House {
     public int entranceQuantity;
     public int flatNumber;
 
-    private DynamicArrayList entrances;
+    private MyList<Entrance> entrances;
 
 
-    public void setEntrances(DynamicArrayList entrances) {
+    public void setEntrances(MyList<Entrance> entrances) {
         this.entrances = entrances;
         this.entranceQuantity = entrances.size();
     }

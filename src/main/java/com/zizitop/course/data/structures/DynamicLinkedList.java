@@ -59,6 +59,11 @@ public class DynamicLinkedList<T> implements MyList<T> {
         return removed;
     }
 
+    @Override
+    public int size() {
+        return 0;
+    }
+
 
     private class Node {
         T object; //payload
