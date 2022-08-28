@@ -6,6 +6,7 @@ import com.zizitop.course.data.structures.HashTable;
 
 public class InMemoryHouseRepository implements HouseRepository {
 
+
     private MyKeyValue <String, House> houseMap = new HashTable<>();
 
     @Override

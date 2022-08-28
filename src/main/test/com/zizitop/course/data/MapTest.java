@@ -1,15 +1,16 @@
 package com.zizitop.course.data;
 
 import com.zizitop.course.data.structures.HashTable;
+import framework.Test;
 
 public class MapTest {
 
-    public static void main(String[] args) {
-        testPut(new HashTable<>(), "Maksim", 3);
+    @Test
+    public void putIntoHashTable_withIntegerKeyAndStringValue_expectedPutted(){
         testPut(new HashTable<>(), 10, "Irina");
     }
 
-    private static <K,V> void testPut(MyKeyValue<K, V> map, K key, V value){
+    private <K,V> void testPut(MyKeyValue<K, V> map, K key, V value){
         //When
         map.put(key, value);
         //Then
