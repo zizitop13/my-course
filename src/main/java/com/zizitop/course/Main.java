@@ -16,8 +16,6 @@ public class Main {
     //точка входа в программу
     public static void main(String[] args) throws InterruptedException {
 
-        //объект - экземпляр класса Channel
-        //javaCodeChannel ссылка на объект
         House house = new House();
 
         Entrance entrance = new Entrance();
