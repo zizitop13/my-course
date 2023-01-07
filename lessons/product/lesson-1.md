@@ -13,3 +13,11 @@
       - [ ] Value object pattern
 
 ### Notes
+
+
+### Homework
+
+- [ ] Value object for address
+- [ ] Http+Tcp, Http server+client+url, Thread (java)        
+http:\\localhost:8080\my\house  - url
+schema|host|port(optional)|resource
