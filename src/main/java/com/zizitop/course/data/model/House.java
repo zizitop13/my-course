@@ -4,10 +4,10 @@ package com.zizitop.course.data.model;
 import java.util.List;
 
 public class House {
-    private String address;
+    private Address address;
     private List<Entrance> entrances;
 
-    public House(String address){
+    public House(Address address){
         this.address = address;
     }
 

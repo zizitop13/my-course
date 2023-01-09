@@ -1,6 +1,4 @@
 package com.zizitop.course.data.model;
-
-
 import java.util.List;
 
 public class Entrance {
