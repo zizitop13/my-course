@@ -1,4 +1,4 @@
-package com.zizitop.course.data.model;
+package com.zizitop.course.data.model.numbers;
 
 import java.security.InvalidParameterException;
 
@@ -8,8 +8,9 @@ public class FlatNumber {
     public FlatNumber(int number){
         if(number>0){
             this.number = number;
+        }else {
+            throw new InvalidParameterException("Number should be positive");
         }
-        throw new InvalidParameterException("Number should be positive");
     }
 
     public int getNumber(){

@@ -17,7 +17,7 @@
 
 ### Homework
 
-- [ ] Value object for address
+- [x] Value object for address
 - [ ] Http+Tcp, Http server+client+url, Thread (java), Java I/O    
 http:\\localhost:8080\my\house  - url
 schema|host|port(optional)|resource
