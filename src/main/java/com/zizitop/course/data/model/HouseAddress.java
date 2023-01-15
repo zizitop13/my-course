@@ -2,12 +2,12 @@ package com.zizitop.course.data.model;
 
 import java.security.InvalidParameterException;
 
-public class Address {
+public class HouseAddress {
     private String town;
     private String street;
     private String number;
-    public Address (String town, String street, String number){
-        if(town != null){
+    public HouseAddress(String town, String street, String number){
+        if(town != null && !town.isBlank()){
             this.town = town;
         }else{
             throw new InvalidParameterException("Town: this field cannot be empty");

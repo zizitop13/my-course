@@ -17,7 +17,8 @@
 
 ### Homework
 
-- [ ] Value object for address
-- [ ] Http+Tcp, Http server+client+url, Thread (java)        
-http:\\localhost:8080\my\house  - url
-schema|host|port(optional)|resource
+- [ ] Value objects for FlatAddress
+- [ ] OSI model, http protocol (codes,methods,bodies)
+- [ ] Chrome debug (developer) mod
+- [ ] Queue, Chain of responsibility
+- [ ] Specification: Servlet API (spec, jsr), Realisations: Tomcat, Jetty, IBM Websphere

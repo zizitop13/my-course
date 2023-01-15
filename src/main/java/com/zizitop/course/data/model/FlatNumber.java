@@ -1,12 +1,11 @@
-package com.zizitop.course.data.model.numbers;
+package com.zizitop.course.data.model;
 
 import java.security.InvalidParameterException;
 
-public class EntranceNumber {
+public class FlatNumber {
     private final int number;
 
-    public EntranceNumber(int number) throws InvalidParameterException {
-
+    public FlatNumber(int number){
         if(number>0){
             this.number = number;
         }else {

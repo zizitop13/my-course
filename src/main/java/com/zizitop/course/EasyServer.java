@@ -1,7 +1,9 @@
-package com.zizitop.course.data.model;
+package com.zizitop.course;
 
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
 
 public class EasyServer {

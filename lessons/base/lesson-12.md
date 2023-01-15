@@ -17,8 +17,8 @@
         - [ ] Exceptions
         - [ ] Composition, Aggregation
         - [ ] Dependency Inversion principle
-    - [ ] Check in SimpleHouseRegistrationService for empty address
-  and throw some unchecked exception if address is empty
+    - [ ] Check in SimpleHouseRegistrationService for empty houseAddress
+  and throw some unchecked exception if houseAddress is empty
     - [ ] Implement get method in SimpleHouseRegistrationService
     - [ ] Write tests for SimpleHouseRegistrationService*
 
