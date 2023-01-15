@@ -21,4 +21,4 @@
 - [ ] OSI model, http protocol (codes,methods,bodies)
 - [ ] Chrome debug (developer) mod
 - [ ] Queue, Chain of responsibility
-- [ ] Specification: Servlet API (spec, jsr), Realisations: Tomcat, Jetty, IBM Websphere
+- [ ] Specification: Servlet API (spec, jsr), Realisation: Tomcat
