@@ -12,4 +12,11 @@ public class Town {
             throw new InvalidParameterException("Town: this field cannot be empty");
         }
     }
+
+    @Override
+    public String toString() {
+        return "Town{" +
+                "name='" + name + '\'' +
+                '}';
+    }
 }

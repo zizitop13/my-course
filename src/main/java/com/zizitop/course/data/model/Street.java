@@ -11,4 +11,11 @@ public class Street {
                     throw new InvalidParameterException("Street: this field cannot be empty");
                 }
     }
+
+    @Override
+    public String toString() {
+        return "Street{" +
+                "name='" + name + '\'' +
+                '}';
+    }
 }
