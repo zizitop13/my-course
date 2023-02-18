@@ -4,11 +4,12 @@
     - [ ] java -jar
     - [ ] registration driver class, run, show classpath [tutor](https://www.tutorialspoint.com/h2_database/h2_database_jdbc_connection.htm)
     - [ ] add library, show classpath
-    - [ ] connect via jdbc
+    - [ ] connect via jdbc (use tcp for multiple connections!)
     - [ ] create db schema
     - [ ] select
     - [ ] insert
     - [ ] update
+    - [ ] connection optimization
 
 - [ ] ORM
   - [ ] reflection mapping

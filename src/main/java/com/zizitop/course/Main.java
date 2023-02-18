@@ -8,6 +8,7 @@ import com.zizitop.course.data.model.HouseAddress;
 import com.zizitop.course.data.model.HouseNumber;
 import com.zizitop.course.data.model.Street;
 import com.zizitop.course.data.model.Town;
+import org.h2.mvstore.tx.Transaction;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -21,7 +22,7 @@ import java.util.concurrent.Executors;
 
 public class Main {
     
-    public static final String JDBC_H2_URL = "jdbc:h2:~/test;"
+    public static final String JDBC_H2_URL = "jdbc:h2:tcp://localhost/~/test;"
             +"INIT=RUNSCRIPT FROM './create.sql'\\;";
 
     //точка входа в программу
@@ -36,6 +37,7 @@ public class Main {
     public static class HouseRegistrationHandler implements HttpHandler {
         @Override
         public void handle(HttpExchange exchange) throws IOException {
+
 
             try (Connection conn = DriverManager.getConnection(JDBC_H2_URL, "sa", "");
 
@@ -58,7 +60,7 @@ public class Main {
 
                 }
             } catch (SQLException e) {
-                throw new RuntimeException(e);
+                e.printStackTrace();
             }
 
 
