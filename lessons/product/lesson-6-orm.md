@@ -11,9 +11,14 @@
     - [ ] Domain model
       - [ ] The main place for business logic
       - [ ] Value object pattern
+- 
 
 ### Notes
-
+  - [ ] reflection mapping
+  - [ ] connection pool
+  - [ ] transaction [tutor](https://docs.oracle.com/javase/tutorial/jdbc/basics/transactions.html)
+  - [ ] session
+  - [ ] session factory
 
 ### Homework
 
