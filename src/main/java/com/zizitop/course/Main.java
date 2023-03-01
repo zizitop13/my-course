@@ -31,7 +31,7 @@ public class Main {
 
     //точка входа в программу
     public static void main(String[] args) throws IOException, ClassNotFoundException, SQLException {
-        Class.forName("org.h2.Driver");
+        Class.forName("org.h2.Driver"); // проверка наличия драйвера для работы с БД
         HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
         server.createContext("/registerHouse", new HouseRegistrationHandler());
         server.setExecutor(Executors.newFixedThreadPool(256)); // creates a default executor
@@ -55,7 +55,7 @@ public class Main {
 //                params.put() TODO: split keyValue add put to map
             }
 
-            try (Connection conn = DriverManager.getConnection(JDBC_H2_URL, "sa", "");
+            try (Connection conn = DriverManager.getConnection(JDBC_H2_URL, "sa", "");//соединение с БД
                 Statement st = conn.createStatement()) {
 
                 ResultSet resultSet = st.executeQuery("select * from HOUSE_ADDRESS"); //TODO: add street
