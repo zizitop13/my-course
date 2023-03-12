@@ -31,7 +31,8 @@ public class Main {
 
     //точка входа в программу
     public static void main(String[] args) throws IOException, ClassNotFoundException, SQLException {
-        Class.forName("org.h2.Driver"); // проверка наличия драйвера для работы с БД
+        // проверка наличия драйвера для работы с БД
+        Class.forName("org.h2.Driver");
         HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
         server.createContext("/registerHouse", new HouseRegistrationHandler());
         server.setExecutor(Executors.newFixedThreadPool(256)); // creates a default executor
@@ -78,7 +79,21 @@ public class Main {
                  Statement st = conn.createStatement()) {
 
                 // Выполнение запроса "select * from HOUSE_ADDRESS" и получение результатов в объекте ResultSet.
-                ResultSet resultSet = st.executeQuery("select * from HOUSE_ADDRESS"); //TODO: add street
+                ResultSet resultSet = st.executeQuery("select * from HOUSE_ADDRESS");
+
+                //TODO: add street
+
+                /**
+                 String streetFilter;
+                 String houseFilter;
+                 // Выполнение запроса с фильтром по STREET
+                ResultSet resultSetFilter = st.executeQuery("select * from HOUSE_ADDRESS WHERE STREET='"
+                 + streetFilter + "'"+"AND HOUSE='" + houseFilter + "'");
+
+                 // не слишком уверен, что сделал именно то, что требовалось, поэтому оставляю этот
+                 участок кода закомментированным.
+                 */
+
 
                 // Начало выполнения цикла, который перебирает все строки в ResultSet.
                 while(resultSet.next()){
