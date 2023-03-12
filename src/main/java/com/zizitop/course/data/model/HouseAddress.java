@@ -35,7 +35,7 @@ public class HouseAddress {
                 "town=" + town +
                 ", street=" + street +
                 ", number=" + number +
-                ", house=" + house +
+                ", house=" + house.getId() +
                 '}';
     }
 }

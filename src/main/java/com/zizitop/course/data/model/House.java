@@ -26,4 +26,13 @@ public class House {
     public long getId() {
         return id;
     }
+
+    @Override
+    public String toString() {
+        return "House{" +
+                "id=" + id +
+                ", houseAddress=" + houseAddress +
+                ", entrances=" + entrances +
+                '}';
+    }
 }
