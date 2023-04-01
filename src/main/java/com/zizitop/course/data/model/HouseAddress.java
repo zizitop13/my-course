@@ -1,18 +1,23 @@
 package com.zizitop.course.data.model;
 
 
+import com.zizitop.course.data.OneToOne;
+
 public class HouseAddress {
 
     private Long id;
     private Town town;
     private Street street;
     private HouseNumber number;
-    
+
+    @OneToOne
     private House house;
 
     public Long getId() {
         return id;
     }
+
+    private HouseAddress(){}
 
     public HouseAddress(Long id, Town town, Street street, HouseNumber number){
         this.id = id;

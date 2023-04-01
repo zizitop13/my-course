@@ -1,6 +1,10 @@
 package com.zizitop.course.controller.house;
 
 import com.zizitop.course.controller.ControllerHandler;
+import com.zizitop.course.data.DatabaseMapper;
+import com.zizitop.course.data.HouseNumberConverter;
+import com.zizitop.course.data.StreetConverter;
+import com.zizitop.course.data.TownConverter;
 import com.zizitop.course.data.model.House;
 import com.zizitop.course.data.model.HouseAddress;
 import com.zizitop.course.data.model.HouseNumber;
@@ -17,6 +21,13 @@ import java.util.Map;
 import static com.zizitop.course.Main.JDBC_H2_URL;
 
 public class GetHouseController implements ControllerHandler {
+
+    private final DatabaseMapper databaseMapper;
+
+    public GetHouseController(DatabaseMapper databaseMapper) {
+        this.databaseMapper = databaseMapper;
+    }
+
     @Override
     public Object execute(Object body, Map<String, String> params, Map<String, String> headers) {
         try (Connection conn = DriverManager.getConnection(JDBC_H2_URL, "sa", "");
@@ -30,27 +41,9 @@ public class GetHouseController implements ControllerHandler {
             ResultSet resultSet = st.executeQuery("select * from HOUSE_ADDRESS WHERE STREET='"
                     + streetFilter + "'"+" AND NUMBER='" + numberFilter + "'");
 
-            // не слишком уверен, что сделал именно то, что требовалось, поэтому оставляю этот
-
-
-
             // Начало выполнения цикла, который перебирает все строки в ResultSet.
             while(resultSet.next()){
-
-                // Извлечение данных из текущей строки ResultSet и сохранение их в соответствующих переменных.
-                long id = resultSet.getLong("ID");
-                String townName = resultSet.getString("TOWN");
-                String streetName = resultSet.getString("STREET");
-                String number = resultSet.getString("NUMBER");
-
-                // Создание новых объектов Town, Street и HouseNumber на основе сохраненных данных.
-                Town town = new Town(townName);
-                Street street = new Street(streetName);
-                HouseNumber houseNumber = new HouseNumber(number);
-
-                // Создание нового объекта HouseAddress на основе извлеченных данных,
-                // регистрация нового дома и получение объекта House.
-                HouseAddress houseAddress = new HouseAddress(id, town, street, houseNumber);
+                HouseAddress houseAddress = databaseMapper.map(resultSet, HouseAddress.class);
                 House house = houseAddress.registerHouse();
                 return house;
             }
