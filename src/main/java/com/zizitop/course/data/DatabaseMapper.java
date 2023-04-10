@@ -31,7 +31,9 @@ public class DatabaseMapper {
                     continue;
                 }
 
-                String label = field.getName().toUpperCase(); //TODO: transform to snake case
+                String label = CamelCaseToSnakeCase.convert(field.getName().toUpperCase()); //TODO: transform to snake case
+
+
                 Class<?> type = field.getType();
 
                 Converter converter = converters.get(type);
