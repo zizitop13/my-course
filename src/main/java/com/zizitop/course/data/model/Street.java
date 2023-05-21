@@ -1,7 +1,11 @@
 package com.zizitop.course.data.model;
 
+import com.zizitop.course.data.converters.StreetConverter;
+import com.zizitop.course.data.orm.ValueObject;
+
 import java.security.InvalidParameterException;
 
+@ValueObject(converter = StreetConverter.class)
 public class Street {
     private final String name;
             public Street (String name){

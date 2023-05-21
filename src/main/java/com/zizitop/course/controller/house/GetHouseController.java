@@ -1,15 +1,9 @@
 package com.zizitop.course.controller.house;
 
 import com.zizitop.course.controller.ControllerHandler;
-import com.zizitop.course.data.DatabaseMapper;
-import com.zizitop.course.data.HouseNumberConverter;
-import com.zizitop.course.data.StreetConverter;
-import com.zizitop.course.data.TownConverter;
 import com.zizitop.course.data.model.House;
 import com.zizitop.course.data.model.HouseAddress;
-import com.zizitop.course.data.model.HouseNumber;
-import com.zizitop.course.data.model.Street;
-import com.zizitop.course.data.model.Town;
+import com.zizitop.course.data.orm.DatabaseMapper;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -19,7 +13,9 @@ import java.sql.Statement;
 import java.util.Map;
 
 import static com.zizitop.course.Main.JDBC_H2_URL;
+import static com.zizitop.course.controller.METHOD.GET;
 
+@RequestMapping(method = GET, path = "/house")
 public class GetHouseController implements ControllerHandler {
 
     private final DatabaseMapper databaseMapper;

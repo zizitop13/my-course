@@ -1,4 +1,4 @@
-package com.zizitop.course.data;
+package com.zizitop.course.data.orm;
 
 public interface Converter<T, S> {
     T convert(S source);

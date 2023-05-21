@@ -1,4 +1,6 @@
-package com.zizitop.course.data;
+package com.zizitop.course.data.orm;
+
+import com.zizitop.course.data.OneToOne;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Constructor;
@@ -8,14 +10,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Map;
 
-public class DatabaseMapper {
+public class DatabaseMapperImpl implements DatabaseMapper {
 
     private final Map<Class<?>, Converter> converters;
 
-    public DatabaseMapper(Map<Class<?>, Converter> converters) {
+    DatabaseMapperImpl(Map<Class<?>, Converter> converters) {
         this.converters = converters;
     }
 
+    @Override
     public <T> T map(ResultSet resultSet, Class<T> tClass) {
         try {
             Constructor<T> constructor = tClass.getDeclaredConstructor();
@@ -31,7 +34,7 @@ public class DatabaseMapper {
                     continue;
                 }
 
-                String label = CamelCaseToSnakeCase.convert(field.getName().toUpperCase()); //TODO: transform to snake case
+                String label = field.getName(); //TODO: transform from snake case
 
 
                 Class<?> type = field.getType();

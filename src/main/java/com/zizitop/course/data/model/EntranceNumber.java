@@ -1,7 +1,11 @@
 package com.zizitop.course.data.model;
 
+import com.zizitop.course.data.converters.EntranceNumberConverter;
+import com.zizitop.course.data.orm.ValueObject;
+
 import java.security.InvalidParameterException;
 
+@ValueObject(converter = EntranceNumberConverter.class)
 public class EntranceNumber {
     private final int number;
 

@@ -1,6 +1,7 @@
-package com.zizitop.course.data;
+package com.zizitop.course.data.converters;
 
 import com.zizitop.course.data.model.Town;
+import com.zizitop.course.data.orm.Converter;
 
 public class TownConverter implements Converter<Town, String> {
 

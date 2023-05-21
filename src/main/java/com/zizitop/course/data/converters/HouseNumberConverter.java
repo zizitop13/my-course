@@ -1,6 +1,7 @@
-package com.zizitop.course.data;
+package com.zizitop.course.data.converters;
 
 import com.zizitop.course.data.model.HouseNumber;
+import com.zizitop.course.data.orm.Converter;
 
 public class HouseNumberConverter implements Converter<HouseNumber, String> {
 

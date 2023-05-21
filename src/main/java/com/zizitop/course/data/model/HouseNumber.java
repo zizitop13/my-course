@@ -1,7 +1,11 @@
 package com.zizitop.course.data.model;
 
+import com.zizitop.course.data.converters.HouseNumberConverter;
+import com.zizitop.course.data.orm.ValueObject;
+
 import java.security.InvalidParameterException;
 
+@ValueObject(converter = HouseNumberConverter.class)
 public class HouseNumber {
     private final String number;
 
