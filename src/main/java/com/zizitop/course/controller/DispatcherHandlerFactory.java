@@ -1,11 +1,7 @@
 package com.zizitop.course.controller;
 
-import com.zizitop.course.controller.house.GetHouseController;
-import com.zizitop.course.controller.house.PostHouseController;
 import com.zizitop.course.controller.house.RequestMapping;
-import com.zizitop.course.data.orm.Converter;
 import com.zizitop.course.data.orm.DatabaseMapper;
-import com.zizitop.course.data.orm.ValueObject;
 import com.zizitop.course.utils.PackageScanner;
 
 import java.lang.annotation.Annotation;
@@ -17,35 +13,43 @@ import java.util.Map;
 
 public class DispatcherHandlerFactory {
 
+    private final String packageForScan;
     private final DatabaseMapper databaseMapper;
 
-    public DispatcherHandlerFactory(DatabaseMapper databaseMapper) {
+
+    public DispatcherHandlerFactory(String packageForScan, DatabaseMapper databaseMapper) {
+        this.packageForScan = packageForScan;
         this.databaseMapper = databaseMapper;
     }
 
-    public DispatcherHandler createDispatcherHandler() throws InvocationTargetException, InstantiationException, IllegalAccessException {
+
+    public DispatcherHandler create(){
+        try {
+            return createDispatcherHandler();
+        } catch (InvocationTargetException | InstantiationException | IllegalAccessException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private DispatcherHandler createDispatcherHandler() throws InvocationTargetException, InstantiationException, IllegalAccessException {
+
         Map<HttpMapping, ControllerHandler> handlerMap = new HashMap<>();
-
-        //TODO: rewrite it to package scan and init via default or "databaseMapper" constructors
-        // handlerMap.putAll(Map.of(
-        //       new HttpMapping("/house", METHOD.GET), new GetHouseController(databaseMapper),
-        //     new HttpMapping("/registerHouse", METHOD.POST), new PostHouseController())
-        //);
-
-
-        List<Class<?>> classes = PackageScanner.scanPackage("controller");
+        List<Class<?>> classes = PackageScanner.scanPackage(packageForScan);
 
         for (Class<?> cl : classes) {
+
             Annotation[] declaredAnnotations = cl.getDeclaredAnnotations();
+
             for (Annotation annotation : declaredAnnotations) {
                 if (annotation instanceof RequestMapping) {
                     RequestMapping requestMapping = (RequestMapping) annotation;
 
-                    new HttpMapping(requestMapping.path(), requestMapping.method());
+                    HttpMapping httpMapping = new HttpMapping(requestMapping.path(), requestMapping.method());//
 
-                    Class<? extends ControllerHandler> controller = null;
-                    Constructor<? extends ControllerHandler>[] declaredConstructors = (Constructor<? extends ControllerHandler>[]) controller.getDeclaredConstructors();
-                    ControllerHandler instance;
+                    Constructor<? extends ControllerHandler>[] declaredConstructors = (Constructor<? extends ControllerHandler>[]) cl
+                            .getDeclaredConstructors();
+
+                    ControllerHandler instance = null;
                     for (Constructor<? extends ControllerHandler> constructor : declaredConstructors) {
                         if (constructor.getParameterCount() == 0) {
                             instance = constructor.newInstance();
@@ -53,9 +57,10 @@ public class DispatcherHandlerFactory {
                         } else if (constructor.getParameterTypes()[0].equals(DatabaseMapper.class)) {
                             instance = constructor.newInstance(databaseMapper);
                             break;
-
                         }
                     }
+
+                    handlerMap.put(httpMapping, instance);
                 }
             }
         }
