@@ -22,6 +22,7 @@
   - OneToMany
 - JUnit
 - Docker
+- Streams
 
 
 
