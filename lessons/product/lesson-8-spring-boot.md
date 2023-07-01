@@ -1,18 +1,27 @@
 ### Plan
 
-- IoC - Inversion of control container - Map<Class, Object> beanMap  
-  - Bean - special object which lives in container
-- Spring
-  - IoC - DI - Dependency Injection
-  - Context - Map<Class, Object> beanMap <- main object
-  - Bean - Spring Bean - Annotation based, Configuration based
+- Spring Boot
+  - IoC --> library dependency
+
 
 
 ### Notes
 
-        Controller <- Service <- DatabaseMapper <- Factory <- Main 
+1) What beans we need for Web?
+    * HttpServer Bean
+    * HttpClient (Optional) Bean
+    * Dispatcher Handler Bean
 
 
 
 ### Homework
+- Rest
+- Hibernate:
+  - Value object
+  - OneToOne
+  - OneToMany
+- JUnit
+- Docker
+
+
 
